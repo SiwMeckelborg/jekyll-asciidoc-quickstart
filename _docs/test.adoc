@@ -1,0 +1,28 @@
+= Testing AsciiDoc File
+
+[[shipment]]
+== Shipment
+
+Description of the actual shipment that contains the goods that are being despatched.
+
+[[shipment-id]]
+=== Shipment ID
+
+In some uses of the Despath Advice, there is no unique identifier assigned to the shipment.
+However, the UBL syntax requires the Shipment ID.
+Consequently, to be able to use elements such as GrossWeightMeasure or CarrierParty, the Shipment/ID must be filled in.
+To cater for scenarios where no ID exist a dummy value must be applied.
+The dummy value must consist of the characters **NA**.
+
+Example:
+
+[source, xml, indent=0]
+----
+<cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:ordering:3</cbc:ProfileID>
+	<cbc:ID>120608888</cbc:ID>
+	<cbc:IssueDate>2019-02-19</cbc:IssueDate>
+	<cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
+	<cac:Contract>
+		<cbc:ID>test_id</cbc:ID>
+	</cac:Contract>
+----
